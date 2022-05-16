@@ -1,0 +1,92 @@
+/* Write a function, howOld(), that has two number parameters, age and year, and returns how old someone who is currently that age was (or will be) during that year. Handle three different cases:
+If the year is in the future, you should return a string in the following format:
+'You will be [calculated age] in the year [year passed in]'
+If the year is before they were born, you should return a string in the following format:
+'The year [year passed in] was [calculated number of years] years before you were born'
+If the year is in the past but not before the person was born, you should return a string in the following format:
+'You were [calculated age] in the year [year passed in]' */
+
+const howOld = (age, year) => {
+    const birthYear = (2022 - age);
+    let newAge = (year - birthYear);
+     if (year < birthYear) {
+       return `The year ${year} was ${newAge * -1} years before you were born`
+     }
+     if (year > 2022) {
+       return `You will be ${newAge} in the year ${year}`
+     } else {
+       return `You were ${newAge} in the year ${year}`
+     }
+    };
+    
+    console.log(howOld(36, 2036))
+    
+    //Challenge 11 - original code to be fixed 
+
+    const whatRelation = percentSharedDNA => {
+        if (percentSharedDNA === 100) {
+            return 'You are likely identical twins.'
+        }
+        if (percentSharedDNA > 34) {
+            return 'You are likely parent and child or full siblings.'
+        }
+        if (percentSharedDNA < 13) {
+            return 'You are likely grandparent and grandchild, aunt/uncle and niece/nephew, or half siblings.'
+        }
+        if (percentSharedDNA > 5) {
+            return 'You are likely 1st cousins.'
+        }
+        if (percentSharedDNA > 2) {
+            return 'You are likely 2nd cousins.'
+        }
+        if (percentSharedDNA > 0) {
+            return 'You are likely 3rd cousins'
+        }
+        return 'You are likely not related.'
+    }
+    
+    console.log(whatRelation(34))
+    // Should print 'You are likely grandparent and grandchild, aunt/uncle and niece/nephew, or half siblings.'
+    
+    console.log(whatRelation(3))
+    // Should print 'You are likely 2nd cousins.'
+
+
+    //fixed code 
+
+    const whatRelation = percentSharedDNA => {
+        if (percentSharedDNA === 100) {
+            return 'You are likely identical twins.'
+        } else if (percentSharedDNA < 3) {
+            return 'You are likely 3rd cousins'
+        } else if (percentSharedDNA < 5) {
+            return 'You are likely 2nd cousins.'
+        } else if (percentSharedDNA < 14) {
+            return 'You are likely 1st cousins.'
+        } else if (percentSharedDNA < 35) {
+            return 'You are likely grandparent and grandchild, aunt/uncle and niece/nephew, or half siblings.'
+        } else if (percentSharedDNA < 99) {
+            return 'You are likely parent and child or full siblings.'   
+        } else {
+        return 'You are likely not related.'
+        }
+    }
+    
+    console.log(whatRelation(34))
+    // Should print 'You are likely grandparent and grandchild, aunt/uncle and niece/nephew, or half siblings.'
+    
+    console.log(whatRelation(3))
+    // Should print 'You are likely 2nd cousins.'
+    
+
+    //challenge 12
+    /*Create a function, tipCalculator(), that has two parameters, a string representing the quality of the service received and a number representing the total cost.
+    Return the tip, as a number, based on the following:
+    ‘bad’ should return a 5% tip
+    ‘ok’ should return a 15% tip
+    ‘good’ should return a 20% tip
+    ‘excellent’ should return a 30% tip
+    all other inputs should default to 18%*/
+
+    
+    
