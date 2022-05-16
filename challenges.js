@@ -200,3 +200,40 @@ const calculateWeight = (earthWeight, planet) => {
 };
 
 console.log(calculateWeight(100, 'Saturn')) 
+
+//challenge 9
+// It can be hard to keep track of what’s truthy or falsy in JavaScript. Write a function, truthyOrFalsy(), that takes in any value and returns true if that value is truthy and false if that value is falsy.
+
+const truthyOrFalsy = input => {
+  if (input) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+console.log(truthyOrFalsy(0)) // Should print false
+
+/*Challenge 9 - A person’s number of imaginary friends are always 25% (or 1/4) of their total friends.
+Write a function, numImaginaryFriends(), that takes in the total number of friends a person has and returns the number of imaginary friends they have.
+Since friends can only come in whole numbers, be sure to round your result up to the nearest whole number before returning it.
+The JavaScript Math.ceil() function will come in handy. Check out the documentation here to figure out how it works.*/
+
+const numImaginaryFriends = friends => {
+  return Math.ceil(friends/4)
+  };
+  
+  console.log(numImaginaryFriends(20)) // Should print 5
+  console.log(numImaginaryFriends(10)) // Should print 3 (2.5 rounded up!)
+  
+
+  //Challenge 10 
+
+  //Write a function, sillySentence(), that has 3 string parameters and returns the following silly sentence with the blanks filled in by the arguments passed into the function:
+  
+  const sillySentence = (adjective, verb, noun) => {
+    return `I am so ${adjective} because I ${verb} coding! Time to write some more awesome ${noun}!`
+    };
+    
+    console.log(sillySentence('excited', 'love', 'functions')) 
+    
