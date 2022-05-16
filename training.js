@@ -14,34 +14,34 @@ const getRandEvent = () => {
 };
 
 // The scope of `days` is too tight 
-const getTrainingDays = event => {
-
-  if (event === 'Marathon') {
+const getTrainingDays = events => {        //here a let days variable should be declared locally and then the lets deleted from the if statement
+                                          //this means that the else if statements are changing the one days variable rather than defining new ones
+  if (events === 'Marathon') {
     let days = 50;
-  } else if (event === 'Triathlon') {
+  } else if (events === 'Triathlon') {
     let days = 100;
-  } else if (event === 'Pentathlon') {
+  } else if (events === 'Pentathlon') {
     let days = 200;
   }
 
   return days;
 };
 
-// The scope of `name` is too tight 
-const logEvent = event => {
-  const name = 'Nala';
-  console.log(`${name}'s event is: ${event}`);
+// The scope of `name` is too tight       
+const logEvent = events => {               //need to add name as a parameter for the function because there's a lot of repetition defining the name variable within two functions
+  const name = 'Nala';                    //this variable should be globally defined as other functions use it
+  console.log(`${name}'s event is: ${events}`);
 };
 
-const logTime = days => {
-  const name = 'Nala';
+const logTime = days => {                  //need to add name as a parameter for the function as above
+  const name = 'Nala';                      //this variable should be globally defined as other functions use it
   console.log(`${name}'s time to train is: ${days} days`);
 };
 
-const event = getRandEvent();
-const days = getTrainingDays(event);
+const events = getRandEvent();
+const days = getTrainingDays(events);
 // Define a `name` variable. Use it as an argument after updating logEvent and logTime 
 
 
-logEvent(event);
+logEvent(events); //need to add the name parameter to call the functions
 logTime(days);
