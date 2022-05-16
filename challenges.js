@@ -76,3 +76,70 @@ const lifePhase = age => {
 };
 
 console.log(lifePhase(99))
+
+/*Challenge 5 
+
+Write a function, finalGrade(). It should:
+
+take three arguments of type number
+find the average of those three numbers
+return the letter grade (as a string) that the average corresponds to
+return ‘You have entered an invalid grade.’ if any of the three grades are less than 0 or greater than 100
+0-59 should return: 'F'
+60-69 should return: 'D'
+70-79 should return: 'C'
+80-89 should return: 'B'
+90-100 should return: 'A'*/
+
+const finalGrade = (score1, score2, score3) => {
+  if ((score1 < 0 || score1 > 100) || (score2 < 0 || score2 > 100) || (score3 < 0 || score3 > 100)) {
+    return 'You have entered an invalid grade.';
+  }
+  let finalScore = (score1 + score2 + score3)/3;
+  if (finalScore < 60) {
+    return 'F';
+  } else if (finalScore < 70) {
+    return 'D';
+  } else if (finalScore < 80) {
+    return 'C';
+  } else if (finalScore < 90) {
+    return 'B';
+  } else {
+    return 'A';
+  }
+}
+
+console.log(finalGrade(99, 82, 67)) 
+
+//Challenge 6 - Write a function, reportingForDuty(), that has two string parameters, rank and lastName, and returns a string in the following format: ‘rank lastName reporting for duty!’
+
+const reportingForDuty = (rank, lastName) => {
+  return `${rank} ${lastName} reporting for duty!`
+  };
+     
+  console.log(reportingForDuty('Private', 'Fido'))
+
+  //Challenge 7 - We wrote a function, rollTheDice(), which is supposed to simulate two dice being rolled and totalled. It’s close to doing what we want, but there’s something not quite right. Can you fix our code, please?
+
+//original code
+
+const rollTheDice = () => {
+  // Math.random() gives us a random number from 0 up to, but not including, 1
+  // We multiplied that by 6 to get a number between 0 and up to, but not including, 6
+  // But since we actually wanted numbers from 1 to 6, inclusive, we added 1
+    let die1 = Math.random() * 6 + 1
+    let die2 = Math.random() * 6 + 1
+    return die1 + die2
+}
+
+//fixed code
+
+const rollTheDice = () => {
+  // Math.random() gives us a random number from 0 up to, but not including, 1
+  // We multiplied that by 6 to get a number between 0 and up to, but not including, 6
+  // But since we actually wanted numbers from 1 to 6, inclusive, we added 1
+    let die1 = Math.floor(Math.random() * 6 + 1) //added math.floor to round it down to 1 and not zero plus added math floor to make it a full number
+    let die2 = Math.floor(Math.random() * 6 + 1)
+    return die1 + die2
+}
+
