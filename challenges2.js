@@ -169,6 +169,26 @@ const isEven = number => {
     
     console.log(isEven(0));
 
+//challenge 16
 
+/*Create a function numberDigits() that takes the variable x as its only parameter.
+If the variable x is between 0 and 9, return the string 'One digit: N', where N is the value of x. For example, numberDigits(5) would return:
+'One digit: 5'
+If the variable x is between 10 and 99, return the string 'Two digits: N', where N is the value of x. For example, numberDigits(12) would output:
+'Two digits: 12'
+Any other value of x, including negative numbers, return the string 'The number is: N', where N is the value of x. For example, numberDigits(-202) would output:
+'The number is: -202'*/
+
+numberDigits = x => {
+    if (x < 0 || x > 99) {
+      return `The number is: ${x}`;
+    } else if (x < 10) {
+      return `One digit: ${x}`;
+    } else {
+      return `Two digits: ${x}`;
+    }
+    };
+    
+    console.log(numberDigits(-100));
     
 
