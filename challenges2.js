@@ -88,5 +88,87 @@ const howOld = (age, year) => {
     ‘excellent’ should return a 30% tip
     all other inputs should default to 18%*/
 
+    const tipCalculator = (quality, total) => {
+        switch (quality) {
+        case 'bad': 
+        return total * .05;
+        break;
+        case 'ok':
+        return total * .15;
+        break;
+        case 'good':
+        return total * .20;
+        break;
+        case 'excellent':
+        return total * .30;
+        break;
+        default: 
+        return total * .18;
+        break;
+        }
+      };
+
+//challenge 13
+/*Write a function, toEmoticon(), that takes in a string and returns the corresponding emoticon as a string. Use a switch/case, and cover these cases:
+
+'shrug' should return '|_{"}_|'
+'smiley face' should return ':)'
+'frowny face' should return':('
+'winky face' should return ';)'
+'heart' should return '<3'
+any other input should return '|_(* ~ *)_|'*/
+
+const toEmoticon = emotion => {
+    switch(emotion) {
+      case 'shrug': 
+      return '|_{"}_|';
+      break;
+      case 'smiley face':
+      return ':)';
+      break;
+      case 'frowny face':
+      return ':(';
+      break;
+      case 'winky face':
+      return ';)';
+      break;
+      case 'heart':
+      return '<3';
+      break;
+      default:
+      return '|_(* ~ *)_|';
+      break;
+    }
+    };
+
+//Challenge 14
+/* Create a function colorMessage() that takes 2 string arguments, favoriteColor and shirtColor.
+If the value of favoriteColor is the same as the value of shirtColor return the string 'The shirt is your favorite color!'.
+If not, return the string 'That is a nice color.'*/
+
+const colorMessage = (favoriteColor, shirtColor) => {
+    if (favoriteColor === shirtColor) {
+      return 'The shirt is your favorite color!';
+    } else {
+      return 'That is a nice color.';
+    }
+    };
     
+    console.log(colorMessage('red','blue'))
+
+//challenge 15
+//Create a function isEven() that takes a number as its only parameter. The function should return true if the number is even and false if the number is odd.
+
+const isEven = number => {
+    if (number % 2 === 0) {
+      return true;
+    } else {
+      return false;
+    }
+    };
     
+    console.log(isEven(0));
+
+
+    
+
