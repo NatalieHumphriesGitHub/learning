@@ -1,7 +1,7 @@
 //This project is to fix the below code - the fixed code is on the training-fixed.js file
 
 // The scope of `random` is too loose 
-const random = Math.floor(Math.random() * 3);
+const random = Math.floor(Math.random() * 3);  //this will produce the same random number if the function is called twice, so the variable should be local within the function
 
 const getRandEvent = () => {
   if (random === 0) {
