@@ -25,7 +25,7 @@ const menu = {
     if (this._meal && this._price) {                                    //checking that meal and price exist before printing the specials
       return `Today's Special is ${this._meal} for £${this._price}`
     } else {
-      'Meal or price was not set correctly!'
+      return 'Meal or price was not set correctly!'
     }
   }
   };
