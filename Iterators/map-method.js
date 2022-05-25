@@ -4,7 +4,7 @@ const bigNumbers = numbers.map(number => {
   return number * 10;
 });
 
-onsole.log(numbers); // Output: [1, 2, 3, 4, 5]
+console.log(numbers); // Output: [1, 2, 3, 4, 5]
 console.log(bigNumbers); // Output: [10, 20, 30, 40, 50]
 
 //map method - this takes a function and uses it to return a new array
