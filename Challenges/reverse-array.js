@@ -16,3 +16,38 @@ const reverseArray = (arr) => {
   
   console.log(reverseArray(sentence));
   // Should print ['This', 'will', 'all', 'make', 'sense.'];
+
+  //greet aliens
+  /*Write a function, greetAliens(), that takes in an array of strings and uses a for loop to print a greeting with each string in the array.
+
+The greeting should take the following format:
+“Oh powerful [stringElement], we humans offer our unconditional surrender!”*/
+
+// Write your code here:
+const greetAliens = (aliens) => {
+    for (let alien in aliens) {
+      console.log(
+        `Oh powerful ${aliens[alien]}, we humans offer our unconditional surrender!`
+      );
+    }
+  };
+  
+   const aliens = ["Blorgous", "Glamyx", "Wegord", "SpaceKing"];
+  
+  greetAliens(aliens);
+  
+  /*Write a function, convertToBaby(), that takes in an array as an argument and, using a loop, returns a new array with each string in the array prepended with 'baby '.*/
+
+  // Write your code here:
+const convertToBaby = array => {
+    babyArray = []
+    for (let i = 0; i < array.length; i++) {
+      babyArray.push('baby ' + array[i])};
+    return babyArray;
+    };
+  
+  const animals = ['panda', 'turtle', 'giraffe', 'hippo', 'sloth', 'human'];
+  
+  console.log(convertToBaby(animals)) 
+  
+  
